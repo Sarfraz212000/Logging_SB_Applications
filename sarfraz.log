@@ -1,0 +1,33 @@
+2025-06-13 19:16:03,860 [main] INFO  in.saffu.Application                               - Starting Application using Java 17.0.6 with PID 2708 (D:\Miroservices-workbench\09-LoggingSbApp\target\classes started by User in D:\Miroservices-workbench\09-LoggingSbApp)
+2025-06-13 19:16:03,869 [main] INFO  in.saffu.Application                               - No active profile set, falling back to 1 default profile: "default"
+2025-06-13 19:16:04,931 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat initialized with port 9090 (http)
+2025-06-13 19:16:04,946 [main] INFO  o.apache.coyote.http11.Http11NioProtocol           - Initializing ProtocolHandler ["http-nio-9090"]
+2025-06-13 19:16:04,948 [main] INFO  o.apache.catalina.core.StandardService             - Starting service [Tomcat]
+2025-06-13 19:16:04,950 [main] INFO  org.apache.catalina.core.StandardEngine            - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-13 19:16:05,014 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                 - Initializing Spring embedded WebApplicationContext
+2025-06-13 19:16:05,015 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 1083 ms
+2025-06-13 19:16:05,481 [main] INFO  o.apache.coyote.http11.Http11NioProtocol           - Starting ProtocolHandler ["http-nio-9090"]
+2025-06-13 19:16:05,506 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat started on port 9090 (http) with context path '/'
+2025-06-13 19:16:05,518 [main] INFO  in.saffu.Application                               - Started Application in 2.238 seconds (process running for 3.468)
+2025-06-13 19:16:05,521 [main] INFO  in.saffu.UserServices                              - this is info msg
+2025-06-13 19:16:05,521 [main] WARN  in.saffu.UserServices                              - this is warn msg
+2025-06-13 19:16:05,521 [main] ERROR in.saffu.UserServices                              - this is error msg
+2025-06-13 19:16:21,556 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-06-13 19:16:21,559 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.w.embedded.tomcat.GracefulShutdown           - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-13 19:16:21,561 [tomcat-shutdown] INFO  o.apache.coyote.http11.Http11NioProtocol           - Pausing ProtocolHandler ["http-nio-9090"]
+2025-06-13 19:16:21,622 [tomcat-shutdown] INFO  o.s.b.w.embedded.tomcat.GracefulShutdown           - Graceful shutdown complete
+2025-06-13 19:16:21,623 [RMI TCP Connection(2)-127.0.0.1] INFO  o.apache.coyote.http11.Http11NioProtocol           - Stopping ProtocolHandler ["http-nio-9090"]
+2025-06-13 19:16:33,274 [main] INFO  in.saffu.Application                               - Starting Application using Java 17.0.6 with PID 10108 (D:\Miroservices-workbench\09-LoggingSbApp\target\classes started by User in D:\Miroservices-workbench\09-LoggingSbApp)
+2025-06-13 19:16:33,278 [main] INFO  in.saffu.Application                               - No active profile set, falling back to 1 default profile: "default"
+2025-06-13 19:16:34,524 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat initialized with port 9090 (http)
+2025-06-13 19:16:34,557 [main] INFO  o.apache.coyote.http11.Http11NioProtocol           - Initializing ProtocolHandler ["http-nio-9090"]
+2025-06-13 19:16:34,563 [main] INFO  o.apache.catalina.core.StandardService             - Starting service [Tomcat]
+2025-06-13 19:16:34,563 [main] INFO  org.apache.catalina.core.StandardEngine            - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-13 19:16:34,658 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]                 - Initializing Spring embedded WebApplicationContext
+2025-06-13 19:16:34,659 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext     - Root WebApplicationContext: initialization completed in 1317 ms
+2025-06-13 19:16:35,124 [main] INFO  o.apache.coyote.http11.Http11NioProtocol           - Starting ProtocolHandler ["http-nio-9090"]
+2025-06-13 19:16:35,153 [main] INFO  o.s.b.w.embedded.tomcat.TomcatWebServer            - Tomcat started on port 9090 (http) with context path '/'
+2025-06-13 19:16:35,164 [main] INFO  in.saffu.Application                               - Started Application in 2.466 seconds (process running for 3.728)
+2025-06-13 19:16:35,168 [main] INFO  in.saffu.UserServices                              - this is info msg
+2025-06-13 19:16:35,168 [main] WARN  in.saffu.UserServices                              - this is warn msg
+2025-06-13 19:16:35,168 [main] ERROR in.saffu.UserServices                              - this is error msg
