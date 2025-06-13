@@ -1,0 +1,222 @@
+
+=======================
+What is Logging & Why?
+=======================
+
+=> The process of storing app execution details into a file/console is called as Logging.
+
+=> Log messages will help us in understanding runtime behaviour of the application.
+
+=> Using log msgs we can identify root cause of the exceptions.
+
+=> To implement logging there are several logging frameworks available in the market.
+
+		1) Log4J
+
+		2) Log4J2
+
+		3) Logback
+
+		4) Logstash
+
+=====================
+Logging Architecture
+=====================	
+
+1) Logger
+
+2) Layout
+
+3) Appender
+
+
+=> Logger is a predefined class and it is providing several methods to generate log msgs.
+
+ex: trace(), debug(), info(), warn(), error()
+
+Note: For every java class we will create one logger object.	
+
+=> Layout represents log msg pattern.
+
+	<date> <time> <class-name> <msg>
+
+
+=> Appender is used to write the log msg to destination.
+
+	Ex : ConsoleAppender
+		 FileAppender
+		 JdbcAppender	
+
+----------------------------------
+@Service
+public class ReportService {
+
+	private Logger logger =
+			LoggerFactory.getLogger(ReportService.class);
+
+	public void generateReport() {
+		logger.trace("this is trace msg");
+		logger.debug("this is debug msg");
+		logger.info("this is info msg");
+		logger.warn("this is warn msg");
+		logger.error("this is error msg");
+	}
+
+	public void deleteUser() {
+		logger.debug("deleteUser() - execution started");
+		try {
+			// logic to delete user
+			logger.info("User deleted successfully");
+		} catch (Exception e) {
+			logger.error("Exception : " + e.getMessage());
+		}
+		logger.debug("deleteUser() - execution completed");
+	}
+
+}
+
+===============
+LOG Levels
+===============
+
+=> To write log msgs to the destination we have several LOG LEVELS.
+
+	1) TRACE
+
+	2) DEBUG
+
+	3) INFO  (DEFAULT log LEVEL IN SPRING BOOT)
+
+	4) WARN
+
+	5) ERROR		 
+
+Note: Log msgs will be printed based on log level of our application.
+
+
+Note: From current log level, it will print all the higher log level msgs.
+
+ex-1: if log level is info, it will print 'info + warn + error' msgs.
+
+ex-2: if log level is warn, it will print 'warn + error' msgs.
+
+ex-3: if log level is debug, it will print 'debug + info + warn + error' msgs.
+
+ex-4: if log level is error, it will print only 'error' msgs.
+
+
+=> We can change application log level by using below property in application.properties file
+
+	logging.level.root = ERROR
+
+
+=> By default, spring boot will use console appender hence log msgs will be printed on console.
+
+=> To print log msgs in log file, we can configure below property
+
+		logging.file.name=ashokit.log		
+
+============================
+Logging with Rolling Policy	
+============================
+
+=> It is used to create multiple log files to store log msgs of our application.
+
+=> Rolling Policy we can implement in 2 ways
+
+		1) Size based rolling 
+
+		2) Time based rolling 
+
+=> Size Based rolling means after reaching given limit then new log file will be created.
+		
+		Ex : 1 GB
+
+=> Time Based rolling means every day new log file should be created.
+
+=> To configure rolling policy we can use logback.xml file.		
+
+=========================
+What is logback.xml ?
+=========================
+
+=> logback.xml is used to customize logging in our application.
+
+=> In logback.xml we will configure below components
+
+	1) Rolling File Appender with policy
+
+	2) Log Msg Pattern
+
+	3) Log Level
+
+=> We will keep "logback.xml" under "src/main/resources" folder	
+
+
+---------------------
+<configuration>
+
+	<appender name="RollingFile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>ashokit.log</file>
+		<encoder>
+			<pattern>%d [%thread] %-5level %-50logger{40} - %msg%n</pattern>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>ashokit-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>1GB</maxFileSize>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<root level="INFO">
+		<appender-ref ref="RollingFile" />
+	</root>
+
+</configuration>
+-------------------------------------------------------
+
+===============
+Log Monitoring
+===============
+
+=> The process of getting log msgs from the log file is called as Log Monitoring.
+
+=> To monitor log files we have several tools in the market
+
+		1) Splunk (licensed)
+
+		2) ELK (free) 
+
+		3) Putty / mobaxterm / gitbash / winscp
+
+
+-------------------------------------------------
+
+@@ Project Lombok Tutorials : https://www.youtube.com/watch?v=8tDym-FxU0A
+
+@@ Log Monitoring with ELK Video : https://www.youtube.com/watch?v=n2HHAvpn6Jo
+
+-------------------------------------------------
+
+1) What is Logging & Why Logging
+
+2) Logging Frameworks
+
+3) Log4J vs SLF4J
+
+4) Logging Architecture
+
+5) LOG LEVELS
+
+6) Rolling Policies (Time and size)
+
+7) What is logback.xml
+
+8) What is @SLF4J annotation
+
+9) Log Monitoring
+
+10) Log Monitoring Tools
+
+------------------------------------------------
